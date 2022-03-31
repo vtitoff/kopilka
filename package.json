@@ -1,0 +1,30 @@
+{
+  "name": "kopilka",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
+  "keywords": [],
+  "author": "vtitoff",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtitoff/kopilka.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vtitoff/kopilka/issues"
+  },
+  "homepage": "https://github.com/vtitoff/kopilka#readme",
+  "description": ""
+}
