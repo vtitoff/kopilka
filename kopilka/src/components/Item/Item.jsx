@@ -14,9 +14,9 @@ const Item = (props) => {
                 </div>
             </div>
             <div className={classes.item__stat}>
-                <div className={classes.item__edit}>
+                <a href="#" className={classes.item__edit}>
                     Редактировать
-                </div>
+                </a>
                 <div className={classes.item__statWheel}>
                     0%
                 </div>

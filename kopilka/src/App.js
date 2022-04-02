@@ -9,29 +9,40 @@ function App() {
         {
             "name": "test name 1",
             "full_sum": 50000,
-            "current_sum": 10000
+            "current_sum": 10000,
+            "user_key": "",
+            "item_id": "",
+            "description": ""
         },
         {
-            "name": "test name 2",
-            "full_sum": 70000,
-            "current_sum": 20000
+            "name": "test name 1",
+            "full_sum": 50000,
+            "current_sum": 10000,
+            "user_key": "",
+            "item_id": "",
+            "description": ""
         },
         {
-            "name": "test name 3",
-            "full_sum": 100000,
-            "current_sum": 100
+            "name": "test name 1",
+            "full_sum": 50000,
+            "current_sum": 10000,
+            "user_key": "",
+            "item_id": "",
+            "description": ""
         }
     ]
-
 
 
     return (
         <div className="App">
             <Header/>
             <div className="content">
+                <button className="add-item__btn">
+                    Добавить цель
+                </button>
                 <div className="container">
-                    {data.map((i)=>{
-                        <Item name={i["name"]} full_sum={i["full_sum"]} current_sum={i["current_sum"]}/>
+                    {data.map((i) => {
+                        return <Item name={i["name"]} full_sum={i["full_sum"]} current_sum={i["current_sum"]}/>
                     })}
                 </div>
             </div>
