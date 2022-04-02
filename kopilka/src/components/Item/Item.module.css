@@ -1,0 +1,28 @@
+.item {
+    border: 1px solid #282c34;
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+
+.item__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.item__stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.item__edit {
+    padding-top: 5px;
+}
+
+.item__statWheel {
+    margin-top: 20px;
+}

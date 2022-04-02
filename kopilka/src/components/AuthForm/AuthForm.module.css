@@ -1,0 +1,8 @@
+.header__auth{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.header__auth:nth-child{
+    margin: 10px;
+}
