@@ -5,6 +5,9 @@ import {CircleProgress} from './progressBarImport'
 const Item = (props) => {
     console.log(props)
 
+    function getItemId(){
+        console.log(props.name)
+    }
 
     return (
         <div className={classes.item}>
