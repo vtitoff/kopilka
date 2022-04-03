@@ -1,0 +1,28 @@
+{
+  "name": "kopilka_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtitoff/kopilka.git"
+  },
+  "author": "vtitoff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vtitoff/kopilka/issues"
+  },
+  "homepage": "https://github.com/vtitoff/kopilka#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
