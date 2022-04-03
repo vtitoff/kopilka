@@ -1,8 +1,11 @@
 import React from 'react'
 import classes from './Item.module.css'
+import {CircleProgress} from './progressBarImport'
 
 const Item = (props) => {
     console.log(props)
+
+
     return (
         <div className={classes.item}>
             <div className={classes.item__body}>
@@ -18,7 +21,7 @@ const Item = (props) => {
                     Редактировать
                 </a>
                 <div className={classes.item__statWheel}>
-                    0%
+                    <CircleProgress percentage={(props.current_sum / props.full_sum * 100).toFixed(1)} strokeWidth={8}/>
                 </div>
             </div>
         </div>

@@ -16,16 +16,16 @@ function App() {
         },
         {
             "name": "test name 1",
-            "full_sum": 50000,
-            "current_sum": 10000,
+            "full_sum": 70000,
+            "current_sum": 9000,
             "user_key": "",
             "item_id": "",
             "description": ""
         },
         {
             "name": "test name 1",
-            "full_sum": 50000,
-            "current_sum": 10000,
+            "full_sum": 150000,
+            "current_sum": 100,
             "user_key": "",
             "item_id": "",
             "description": ""
