@@ -14,19 +14,46 @@ class ItemController {
     }
 
     async getAll(req, res){
-
+        try{
+            const items = await Item.find();
+            return res.json(items)
+        } catch (e){
+            res.status(500).json(e)
+            console.log(e)
+        }
     }
 
     async getOne(req, res){
-
+        try{
+            const{id} = req.params
+            if (!id){
+                res.status(400).json({message:'Id не указан'})
+            }
+            const item = await Item.findById(id)
+            console.log(item)
+            return res.json(item)
+        } catch (e){
+            res.status(500).json(e)
+            console.log(e)
+        }
     }
 
     async update(req, res){
+        try{
 
+        } catch (e){
+            res.status(500).json(e)
+            console.log(e)
+        }
     }
 
     async delete(req, res){
+        try{
 
+        } catch (e){
+            res.status(500).json(e)
+            console.log(e)
+        }
     }
 }
 
