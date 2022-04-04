@@ -31,35 +31,12 @@ function App() {
             "user_key": "",
             "item_id": "",
             "description": ""
-        },
-        {
-            "name": "test name 1",
-            "full_sum": 50000,
-            "current_sum": 10000,
-            "user_key": "",
-            "item_id": "",
-            "description": ""
-        },
-        {
-            "name": "test name 1",
-            "full_sum": 70000,
-            "current_sum": 9000,
-            "user_key": "",
-            "item_id": "",
-            "description": ""
-        },
-        {
-            "name": "test name 1",
-            "full_sum": 150000,
-            "current_sum": 100,
-            "user_key": "",
-            "item_id": "",
-            "description": ""
         }
     ]
 
     const [modalActive, setModalActive] = useState(false)
-    function modalCreate(){
+
+    function modalCreate() {
         setModalActive(!modalActive)
     }
 
@@ -72,7 +49,8 @@ function App() {
                 </button>
                 <div className="container">
                     {data.map((i) => {
-                        return <Item name={i["name"]} full_sum={i["full_sum"]} current_sum={i["current_sum"]}/>
+                        return <Item name={i["name"]} full_sum={i["full_sum"]} current_sum={i["current_sum"]}
+                                     modal_edit={modalCreate} active={modalActive}/>
                     })}
                 </div>
             </div>

@@ -1,5 +1,5 @@
 .item {
-    width: 500px;
+    width: 450px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
@@ -13,8 +13,17 @@
 .item__body {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 200px;
+}
+
+.item__bodyName {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.item__bodyPoints {
+    padding-bottom: 10px;
 }
 
 .item__stat {
@@ -28,4 +37,14 @@
 
 .item__statWheel {
     margin-top: 20px;
+}
+
+.item__edit{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding-top: 10px;
+}
+.item__edit:hover{
+    color: deeppink;
 }
