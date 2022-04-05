@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import itemRouter from './itemRoute.js';
+import itemRouter from './ItemRoute.js';
+import metricRouter from "./MetricRoute.js";
 
 const PORT = 5000;
 const DB_TOKEN = process.env.mongo_db_kopilka
@@ -9,6 +10,7 @@ const app = express()
 
 app.use(express.json())
 app.use('/items', itemRouter)
+app.use('/metric', metricRouter)
 // app.use('/user', userRouter)
 
 
