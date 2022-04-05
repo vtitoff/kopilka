@@ -29,7 +29,7 @@ const Item = (props) => {
                                     primaryColor={['#f093fb', '#f5576c']}/>
                 </div>
             </div>
-            <ModalItemEdit setActive={props.active}/>
+            <ModalItemEdit active={props.active} setActive={props.modal_edit}/>
         </div>
     )
 }

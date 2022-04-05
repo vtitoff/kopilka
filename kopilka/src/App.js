@@ -34,10 +34,15 @@ function App() {
         }
     ]
 
-    const [modalActive, setModalActive] = useState(false)
+    const [modalCreateActive, setModalCreateActive] = useState(false)
+    const [modalEditActive, setModalEditActive] = useState(false)
 
     function modalCreate() {
-        setModalActive(!modalActive)
+        setModalCreateActive(!modalCreateActive)
+    }
+
+    function modalEdit(){
+        setModalEditActive(!modalEditActive)
     }
 
     return (
@@ -50,11 +55,11 @@ function App() {
                 <div className="container">
                     {data.map((i) => {
                         return <Item name={i["name"]} full_sum={i["full_sum"]} current_sum={i["current_sum"]}
-                                     modal_edit={modalCreate} active={modalActive}/>
+                                     modal_edit={modalEdit} active={modalEditActive}/>
                     })}
                 </div>
             </div>
-            <ModalItemCreateItem active={modalActive} setActive={modalCreate}/>
+            <ModalItemCreateItem active={modalCreateActive} setActive={modalCreate}/>
         </div>
     );
 }

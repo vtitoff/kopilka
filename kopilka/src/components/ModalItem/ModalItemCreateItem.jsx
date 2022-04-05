@@ -5,6 +5,7 @@ import ModalItem from "./ModalItem";
 
 const ModalItemCreateItem = (props) => {
     if (props.active) {
+        console.log('ModalItemCreateItem active')
         return (
 
             <ModalItem setActive={props.setActive}>
