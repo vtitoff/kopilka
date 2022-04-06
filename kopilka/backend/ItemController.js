@@ -1,4 +1,3 @@
-import Item from "./Item.js";
 import ItemService from "./Service/ItemService.js";
 
 class ItemController {
@@ -31,19 +30,19 @@ class ItemController {
 
     async update(req, res) {
         try {
-
+            const item = await ItemService.update(req.body)
+            res.json(item)
         } catch (e) {
             res.status(500).json(e)
-            console.log(e)
         }
     }
 
     async delete(req, res) {
         try {
-
+            const item = await ItemService.delete(req.params.id)
+            res.json(item)
         } catch (e) {
             res.status(500).json(e)
-            console.log(e)
         }
     }
 }

@@ -28,21 +28,19 @@ class ItemService {
         }
     }
 
-    async update(req, res) {
+    async update(item) {
         try {
-
+            return await Item.findByIdAndUpdate(item._id, item, {new:true})
         } catch (e) {
-            res.status(500).json(e)
-            console.log(e)
+            throw new Error('Update Error!')
         }
     }
 
-    async delete(req, res) {
+    async delete(id) {
         try {
-
+            return await Item.findOneAndDelete(id)
         } catch (e) {
-            res.status(500).json(e)
-            console.log(e)
+            throw new Error('Delete Error!')
         }
     }
 }
