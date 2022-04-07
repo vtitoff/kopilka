@@ -6,7 +6,7 @@ class ItemController {
             const item = await ItemService.create(req.body)
             res.status(200).json(item)
         } catch (e) {
-            res.status(500).json(e)
+            res.status(500).json(e.message())
         }
     }
 
@@ -15,7 +15,7 @@ class ItemController {
             const items = await ItemService.getAll();
             res.json(items)
         } catch (e) {
-            res.status(500).json(e)
+            res.status(500).json(e.message())
         }
     }
 
@@ -24,7 +24,7 @@ class ItemController {
             const item = await ItemService.getOne(req.params.id)
             res.json(item)
         } catch (e) {
-            res.status(500).json(e)
+            res.status(500).json(e.message())
         }
     }
 
@@ -33,7 +33,7 @@ class ItemController {
             const item = await ItemService.update(req.body)
             res.json(item)
         } catch (e) {
-            res.status(500).json(e)
+            res.status(500).json(e.message())
         }
     }
 
@@ -42,7 +42,7 @@ class ItemController {
             const item = await ItemService.delete(req.params.id)
             res.json(item)
         } catch (e) {
-            res.status(500).json(e)
+            res.status(500).json(e.message())
         }
     }
 }

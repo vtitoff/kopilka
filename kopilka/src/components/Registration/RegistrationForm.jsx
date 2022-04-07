@@ -3,31 +3,53 @@ import classes from './RegistrationForm.module.css'
 
 const RegistrationForm = (props) => {
     const [typeForm, setTypeForm] = useState('login')
+    const [login, setLogin] = useState('')
+    const [password, setPassword] = useState('')
 
     function changeTypeForm() {
-        if(typeForm === "registration"){
+        if (typeForm === "registration") {
             setTypeForm("login")
-        }else{
+        } else {
             setTypeForm("registration")
         }
-        console.log()
+    }
+
+    function changeLogin(e) {
+        e.preventDefault()
+        setLogin(e.target.value);
+    }
+
+    function changePassword(e) {
+        e.preventDefault()
+        setPassword(e.target.value);
+    }
+
+    function loginAuth() {
+        // TODO ходить в ручку /users/user/:id и при получении данных записывать в хранилище инфо о логине
+        localStorage.setItem('username', login);
+    }
+
+    function registration() {
+        return undefined
     }
 
     if (typeForm === "login") {
-         return (
+        return (
             <form className={classes.registrationForm}>
-                <input className={classes.login + ' ' + classes.input} type="text" placeholder="Логин"/>
-                <input className={classes.password + ' ' + classes.input} type="text" placeholder="Пароль"/>
+                <input className={classes.login + ' ' + classes.input} type="text" placeholder="Логин"
+                       onChange={changeLogin}/>
+                <input className={classes.password + ' ' + classes.input} type="password" placeholder="Пароль"
+                       onChange={changePassword}/>
                 <a href="#" onClick={changeTypeForm}>Зарегистрироваться</a>
-                <button className={classes.formButton}>Вход</button>
+                <button className={classes.formButton} onClick={loginAuth}>Вход</button>
             </form>
         )
     } else {
         return (
             <form className={classes.registrationForm}>
                 <input className={classes.login + ' ' + classes.input} type="text" placeholder="Логин"/>
-                <input className={classes.password + ' ' + classes.input} type="text" placeholder="Пароль"/>
-                <input className={classes.repeatPassword + ' ' + classes.input} type="text"
+                <input className={classes.password + ' ' + classes.input} type="password" placeholder="Пароль"/>
+                <input className={classes.repeatPassword + ' ' + classes.input} type="password"
                        placeholder="Повторный Пароль"/>
                 <a href="#" onClick={changeTypeForm}>Есть аккаунт? Войти</a>
                 <button className={classes.formButton + ' ' + classes.formButtonRegistration}>Регистрация</button>
