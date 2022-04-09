@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import itemRouter from './ItemRoute.js';
 import metricRouter from "./MetricRoute.js";
 import userRouter from "./UserRoute.js";
+import cors from 'cors';
 
 const PORT = 5000;
 const DB_TOKEN = process.env.mongo_db_kopilka
@@ -13,7 +14,7 @@ app.use(express.json())
 app.use('/items', itemRouter)
 app.use('/metrics', metricRouter)
 app.use('/users', userRouter)
-
+app.use(cors())
 
 async function startApp() {
     try {

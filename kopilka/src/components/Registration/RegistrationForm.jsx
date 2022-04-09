@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import classes from './RegistrationForm.module.css'
 
 const RegistrationForm = (props) => {
     const [typeForm, setTypeForm] = useState('login')
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
+    const [res, setRes] = useState(false)
 
     function changeTypeForm() {
         if (typeForm === "registration") {
@@ -27,11 +28,20 @@ const RegistrationForm = (props) => {
     function loginAuth() {
         // TODO ходить в ручку /users/user/:id и при получении данных записывать в хранилище инфо о логине
         localStorage.setItem('username', login);
+        setRes(!res)
     }
 
     function registration() {
         return undefined
     }
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/items')
+            .then(response => {
+                let result = response.json()
+                console.log(result)
+            })
+    }, [res])
 
     if (typeForm === "login") {
         return (

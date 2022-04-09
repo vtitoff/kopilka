@@ -13,7 +13,9 @@ class ItemController {
     async getAll(req, res) {
         try {
             const items = await ItemService.getAll();
+            res.append('Access-Control-Allow-Origin', ['*']);
             res.json(items)
+	    console.log(res)	
         } catch (e) {
             res.status(500).json(e.message())
         }
