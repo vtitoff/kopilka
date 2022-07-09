@@ -1,0 +1,10 @@
+.content{
+  padding-top: 50px;
+  /*background-color: #f8f8ff;*/
+  background-color: #282c34;
+  padding-bottom: 300px;
+}
+
+.add-item__btn{
+  margin-bottom: 50px;
+}

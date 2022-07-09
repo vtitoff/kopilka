@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/backend_js/node_modules
 /.pnp
 .pnp.js
 
@@ -11,6 +12,7 @@
 # production
 /build
 
+/database/postgres_data
 # misc
 .DS_Store
 .env.local

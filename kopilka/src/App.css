@@ -1,13 +1,17 @@
+body {
+    background-color: #282c34;
+}
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.content{
-  padding-top: 50px;
-  background-color: #f8f8ff;
-  padding-bottom: 300px;
+.content {
+    padding-top: 50px;
+    background-color: #f8f8ff;
+    padding-bottom: 300px;
 }
 
-.add-item__btn{
-  margin-bottom: 50px;
+.add-item__btn {
+    margin-bottom: 50px;
 }

@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import classes from './Item.module.css'
 import {CircleProgress} from './progressBarImport'
 import ModalItemEdit from "../ModalItem/ModalItemEdit";
 
 const Item = (props) => {
     console.log(props)
+    const [modalEditActive, setModalEditActive] = useState(false)
+
+    function modalEdit() {
+        setModalEditActive(!modalEditActive)
+        console.log('modal edit')
+        console.log(modalEditActive)
+    }
 
     function getItemId() {
         console.log(props.name)
@@ -21,15 +28,16 @@ const Item = (props) => {
                 </div>
             </div>
             <div className={classes.item__stat}>
-                <button href="#" className={classes.item__edit} onClick={props.modal_edit}>
+                <button href="#" className={classes.item__edit} onClick={modalEdit}>
                     Редактировать
                 </button>
                 <div className={classes.item__statWheel}>
-                    <CircleProgress percentage={(props.current_sum / props.full_sum * 100).toFixed(1)} strokeWidth={8}
+                    <CircleProgress percentage={Number((props.current_sum / props.full_sum * 100).toFixed(1))}
+                                    strokeWidth={8}
                                     primaryColor={['#f093fb', '#f5576c']}/>
                 </div>
             </div>
-            <ModalItemEdit active={props.active} setActive={props.modal_edit}/>
+            <ModalItemEdit active={modalEditActive} setActive={modalEdit}/>
         </div>
     )
 }

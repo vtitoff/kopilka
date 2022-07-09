@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Item from "../Item/Item";
 import ModalItemCreateItem from "../ModalItem/ModalItemCreateItem";
+import classes from "./Content.module.css";
 
 const Content = (props) => {
     let data = [
@@ -31,32 +32,33 @@ const Content = (props) => {
     ]
 
     const [modalCreateActive, setModalCreateActive] = useState(false)
-    const [modalEditActive, setModalEditActive] = useState(false)
 
     function modalCreate() {
         setModalCreateActive(!modalCreateActive)
     }
 
-    function modalEdit(){
-        setModalEditActive(!modalEditActive)
-    }
+    useEffect(() => {
 
-    return (
-        <div className="content">
-            <div className="content__inner">
-                <button className="add-item__btn" onClick={modalCreate}>
-                    Добавить цель
-                </button>
-                <div className="container">
-                    {data.map((i) => {
-                        return <Item name={i["name"]} full_sum={i["full_sum"]} current_sum={i["current_sum"]}
-                                     modal_edit={modalEdit} active={modalEditActive}/>
-                    })}
+    }, [])
+
+    if (props.logged) {
+        return (
+            <div className={classes.content}>
+                <div className="content__inner">
+                    <button className="add-item__btn" onClick={modalCreate}>
+                        Добавить цель
+                    </button>
+                    <div className="container">
+                        {data.map((i) => {
+                            return <Item name={i["name"]} full_sum={i["full_sum"]} current_sum={i["current_sum"]}
+                                         key={Date.now()}/>
+                        })}
+                    </div>
                 </div>
+                <ModalItemCreateItem active={modalCreateActive} setActive={modalCreate}/>
             </div>
-            <ModalItemCreateItem active={modalCreateActive} setActive={modalCreate}/>
-        </div>
-    )
+        )
+    }
 }
 
 export default Content;

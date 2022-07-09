@@ -29,6 +29,7 @@ const RegistrationForm = (props) => {
         // TODO ходить в ручку /users/user/:id и при получении данных записывать в хранилище инфо о логине
         localStorage.setItem('username', login);
         setRes(!res)
+        props.auth()
     }
 
     function registration() {
@@ -36,14 +37,16 @@ const RegistrationForm = (props) => {
     }
 
     useEffect(()=>{
-        fetch('http://localhost:5000/items')
+        if (res){
+            fetch('http://localhost:5000/items')
             .then(response => {
                 let result = response.json()
                 console.log(result)
             })
+        }
     }, [res])
 
-    if (typeForm === "login") {
+    if (typeForm === "login" && !props.logged) {
         return (
             <form className={classes.registrationForm}>
                 <input className={classes.login + ' ' + classes.input} type="text" placeholder="Логин"
@@ -54,7 +57,7 @@ const RegistrationForm = (props) => {
                 <button className={classes.formButton} onClick={loginAuth}>Вход</button>
             </form>
         )
-    } else {
+    } else if(typeForm === "registration" && !props.logged){
         return (
             <form className={classes.registrationForm}>
                 <input className={classes.login + ' ' + classes.input} type="text" placeholder="Логин"/>
